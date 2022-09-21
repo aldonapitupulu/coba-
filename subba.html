@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>suba ganteng</title>
+    </head>
+    <body>
+        <p id="now"></p>
+        <input id="user_email">
+        <button id="notif">submit</button>
+        <script>
+            let tanggal_hari_ini = new Date(Date.now()),
+            now = document.getElementById("now")
+            now.innerHTML = tanggal_hari_ini.toLocaleDateString()
+        </script>
+        <script>
+            let notif = document.getElementById("notif")
+            notif.onclick = function(){
+            let user_email = document.getElementById("user_email").value 
+            alert("kami akan memberikan notifikasi ke "+user_email+". terima kasih by subaaaaaaa")
+            }   
+            </script>
+    </body>
+</html>
