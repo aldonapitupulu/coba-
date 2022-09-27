@@ -1,0 +1,86 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 2</title>
+</head>
+<body>
+    <div id="box">
+        <h1>kalkulator BMI</h1>
+        <br>
+        
+        <p>Tinggi Badan : </p>
+            <input type="text" id="t">
+
+        <p>Berat Badan : </p>
+            <input type="text" id="b">
+        <p id="text"></p>
+        <button id="btn" onclick="BMI()">Hitung</button>
+    </div>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(224, 95, 117);
+    margin: 100px;
+    text-align: center;
+}
+#box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 350px;
+    background-color: rgb(252, 240, 146);
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px black;
+    padding: 30px;
+    font-size: 20px;
+}
+#box input{
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border: 1px black solid;
+    padding: 5px;
+}
+
+#box button{
+    margin-top: 10px;
+    width: 80px;
+    background-color: rgb(167, 132, 137);
+    border-style: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+    </style>
+    <script type="text/javascript">
+        function BMI() {
+            var t = document.getElementById('t').value;
+            var b = document.getElementById('b').value;
+            var bmi=b/(t/100*t/100);
+            var bmi1=(bmi.toFixed(2));
+
+            if(bmi1 < 18.6){
+                var grade="berat badan kurang : " + bmi1
+            }
+            else if(bmi1 >= 18.6 && bmi1 < 24.9){
+                var grade="Normal : " + bmi1
+            }
+            else{
+                var grade="obesitas : " + bmi1
+            }
+
+            document.getElementById('text').innerHTML="Your BMI is " + grade;
+        }
+    </script>
+</body>
+</html>
