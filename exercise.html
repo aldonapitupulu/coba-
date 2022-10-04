@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <style>
+        body{
+            text-align: center;
+            height: 100vh;
+            color: white;
+            background-color: rgb(224, 95, 117);
+        }
+        h1{
+            font-size: 70px;
+            color:  rgb(252, 240, 146);
+        }
+        h2{
+            font-family: monospace;
+            font-size: 30px;
+        }
+        #masuk{
+            text-align: center;
+            padding: 7px;
+            margin: 10px;
+            width: 250px;
+            background-image: rgb(252, 240, 146);        }
+        p{
+            font-family: monospace;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Punny web</h1>
+    <h2>westlife</h2>
+    <input type="text-area" id="masuk" placeholder="Masukkan">    
+    <p> jumlah kata : <span id="kata" /> </p>
+
+    <script>
+        let input = document.getElementById("masuk")
+        let kata = document.getElementById("kata")
+
+        input.addEventListener("input", ()=>{
+            kata.innerText=input.value.split("").length
+        })
+    </script>
+</body>
+</html>

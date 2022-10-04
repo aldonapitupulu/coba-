@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>westlife</title>
+    <style>
+        body{
+            height: 100vh;
+            color: white;
+            background-color:  rgb(224, 95, 117);;
+        }
+        .text {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .judul {
+            width: 50%;
+            margin: auto;
+            margin-bottom: 1rem;
+            padding: 0.25rem 0.75rem;
+        }
+        h1 {
+            color:  rgb(252, 240, 146);
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <h1>Punny Web</h1>
+        <h2 id="artist"></h2>
+        <div class="judul" id="title"></div>
+            <p id="data"></p>
+            <span class="card-text" id="count">Jumlah kalimat :</span>
+    </div>
+
+    <script>
+        let lirik_lagu = {
+            status: true,
+            data : {
+                artist: "Westlife",
+                songTitle: "I Have Dream",
+                songLyrics: "I have a dream, a song to sing\nTo help me cope with anything\nIf you see the wonder (wonder) of a fairy tale\nYou can take the future even if you fail"
+            }
+        }
+        let artist = document.getElementById('artist');
+        let title = document.getElementById('title');
+        let data = document.getElementById('data');
+        let count = document.getElementById('count');
+
+        let song_artist = lirik_lagu.data.artist;
+        let title_content = lirik_lagu.data.songTitle;
+        let data_content = lirik_lagu.data.songLyrics.replaceAll('\n', '<br>');
+        let count_sentences = data_content.replaceAll('<br>', ' ').split(' ').length;
+
+        artist.innerHTML = artist.innerText + song_artist;
+        title.innerHTML = title.innerText + title_content;
+        data.innerHTML = data.innerHTML + data_content;
+        count.innerHTML = count.innerHTML + count_sentences;
+    </script>
+</body>
+</html>
