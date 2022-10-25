@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punny Web</title>
+    <style>
+
+        body{
+            background-color: rgb(224, 95, 117);
+        }
+        .box{
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 20px;
+        }
+        form button{
+            margin-top: 10px;
+        }
+
+        input{
+            width: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        button{
+            padding: 10px;
+            width: 115px;
+            background-color: rgb(72, 189, 189);
+            border-style: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Punny Web</h1>
+        <p>Website akan segera dapat diakses lengkap pada</p>
+        <p>11/11/2021</p>
+        <p>Now: <span id="now"></span></p>
+        <form action="#">
+            <input type="email" id="user_email" placeholder="211112007@example.com">
+            <br>
+            <button  id="notif">Get Notification</button>
+        </form>
+        <script>
+            let tanggal_hari_ini = new Date(Date.now()),
+            now = document.getElementById("now")
+            now.innerHTML = tanggal_hari_ini.toLocaleDateString()
+
+            let notif = document.getElementById("notif")
+            notif.onclick = function() {
+                let user_email = document.getElementById("user_email").value
+                alert("Kami akan memberikan notifikasi ke " + user_email+ ". Terima kasih")
+            }
+        </script>
+    </div>
+</body>
+</html>
